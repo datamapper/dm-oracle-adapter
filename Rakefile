@@ -18,6 +18,7 @@ begin
     gem.add_dependency 'data_objects', '~> 0.10.1'
     gem.add_dependency 'do_oracle', '~> 0.10.1'
     gem.add_dependency 'dm-core', '~> 0.10.3'
+    gem.add_dependency 'dm-data_objects-adapter', '~> 0.10.3'
 
     gem.add_development_dependency 'rspec', '~> 1.3'
     gem.add_development_dependency 'yard', '~> 0.5'
