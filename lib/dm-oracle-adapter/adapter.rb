@@ -1,3 +1,6 @@
+require 'do_oracle'
+require 'dm-do-adapter'
+
 module DataMapper
 
   class Property
