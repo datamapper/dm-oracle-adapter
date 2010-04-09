@@ -1,7 +1,6 @@
 require 'spec_helper'
 
-require 'dm-migrations/adapters/dm-oracle-adapter'
-require 'dm-oracle-adapter'
+require 'dm-migrations'
 
 require 'dm-core/spec/adapter_shared_spec'
 require 'dm-do-adapter/spec/shared_spec'
@@ -45,7 +44,7 @@ module SQLLogHelper
 end
 
 
-describe DataMapper::Adapters::OracleAdapter do
+describe 'DataMapper::Adapters::OracleAdapter' do
 
   before :all do
     @adapter    = DataMapper.setup(:default, 'oracle://dm_core_test:dm_core_test@localhost/orcl')
