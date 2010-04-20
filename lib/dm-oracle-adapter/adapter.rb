@@ -221,7 +221,7 @@ module DataMapper
       end #module SQL
 
       include SQL
-    end # class PostgresAdapter
+    end # class OracleAdapter
 
     const_added(:OracleAdapter)
   end # module Adapters
