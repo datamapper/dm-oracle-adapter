@@ -1,9 +1,15 @@
 require 'spec_helper'
 
-require 'dm-migrations'
-
-require 'dm-core/spec/adapter_shared_spec'
+require 'dm-core/spec/shared/adapter_spec'
 require 'dm-do-adapter/spec/shared_spec'
+
+require 'dm-migrations'
+require 'dm-oracle-adapter/spec/setup'
+
+ENV['ADAPTER']          = 'oracle'
+ENV['ADAPTER_SUPPORTS'] = 'all'
+
+DataMapper::Spec.setup
 
 module SQLLogHelper
   class SQLLogger
@@ -47,7 +53,7 @@ end
 describe 'DataMapper::Adapters::OracleAdapter' do
 
   before :all do
-    @adapter    = DataMapper.setup(:default, 'oracle://dm_core_test:dm_core_test@localhost/orcl')
+    @adapter    = DataMapper::Spec.adapter
     @repository = DataMapper.repository(@adapter.name)
 
     # speed up test execution
