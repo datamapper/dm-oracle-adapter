@@ -9,8 +9,6 @@ require 'dm-oracle-adapter/spec/setup'
 ENV['ADAPTER']          = 'oracle'
 ENV['ADAPTER_SUPPORTS'] = 'all'
 
-DataMapper::Spec.setup
-
 module SQLLogHelper
   class SQLLogger
     attr_accessor :buffer
