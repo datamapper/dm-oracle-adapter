@@ -13,7 +13,7 @@ begin
     gem.email       = %q{dan.kubb@gmail.com}
     gem.homepage    = 'http://github.com/datamapper/dm-oracle-adapter'
 
-    gem.add_dependency 'do_oracle',         '~> 0.10.1'
+    gem.add_dependency 'do_oracle',         '~> 0.10.2'
     gem.add_dependency 'dm-do-adapter',     '~> 1.0.0.rc1'
 
     gem.add_development_dependency 'rspec', '~> 1.3'
