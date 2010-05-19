@@ -61,7 +61,7 @@ describe 'DataMapper::Adapters::OracleAdapter' do
     end
 
   end
-  
+
   it_should_behave_like "An Adapter"
   it_should_behave_like "A DataObjects Adapter"
 
