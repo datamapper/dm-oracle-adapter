@@ -2,19 +2,21 @@ require 'rubygems'
 require 'rake'
 
 begin
-
+  gem 'jeweler', '~> 1.4'
   require 'jeweler'
 
   Jeweler::Tasks.new do |gem|
     gem.name        = 'dm-oracle-adapter'
     gem.summary     = 'Oracle Adapter for DataMapper'
     gem.description = gem.summary
-    gem.authors     = ["Dan Kubb"]
-    gem.email       = %q{dan.kubb@gmail.com}
-    gem.homepage    = 'http://github.com/datamapper/dm-oracle-adapter'
+    gem.email       = 'dan.kubb@gmail.com'
+    gem.homepage    = 'http://github.com/datamapper/%s' % gem.name
+    gem.authors     = [ 'Dan Kubb' ]
 
-    gem.add_dependency 'do_oracle',         '~> 0.10.2'
-    gem.add_dependency 'dm-do-adapter',     '~> 1.0.0.rc2'
+    gem.rubyforge_project = 'datamapper'
+
+    gem.add_dependency 'do_oracle',     '~> 0.10.2'
+    gem.add_dependency 'dm-do-adapter', '~> 1.0.0.rc2'
 
     gem.add_development_dependency 'rspec', '~> 1.3'
   end
