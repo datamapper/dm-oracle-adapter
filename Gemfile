@@ -67,7 +67,7 @@ group :datamapper do # We need this because we want to pin these dependencies to
   gem 'data_objects',    DO_VERSION, :git => "#{DATAMAPPER}/do.git"
 
   plugins = ENV['PLUGINS'] || ENV['PLUGIN']
-  plugins = (plugins.to_s.gsub(',',' ').split(' ') + ['dm-migrations']).uniq
+  plugins = plugins.to_s.tr(',', ' ').split.push('dm-migrations').uniq
 
   plugins.each do |plugin|
     gem plugin, DM_VERSION, :git => "#{DATAMAPPER}/#{plugin}.git"
