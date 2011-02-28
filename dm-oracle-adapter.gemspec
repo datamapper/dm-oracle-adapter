@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dan Kubb"]
-  s.date = %q{2011-02-19}
+  s.date = %q{2011-02-27}
   s.description = %q{Oracle Adapter for DataMapper}
   s.email = %q{dan.kubb@gmail.com}
   s.extra_rdoc_files = [
@@ -49,24 +49,24 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<do_oracle>, ["~> 0.10.2"])
       s.add_runtime_dependency(%q<dm-do-adapter>, ["~> 1.0.2"])
       s.add_development_dependency(%q<dm-migrations>, ["~> 1.0.2"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_development_dependency(%q<rake>, ["~> 0.8.7"])
       s.add_development_dependency(%q<rspec>, ["~> 1.3.1"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
     else
       s.add_dependency(%q<do_oracle>, ["~> 0.10.2"])
       s.add_dependency(%q<dm-do-adapter>, ["~> 1.0.2"])
       s.add_dependency(%q<dm-migrations>, ["~> 1.0.2"])
+      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<rake>, ["~> 0.8.7"])
       s.add_dependency(%q<rspec>, ["~> 1.3.1"])
-      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     end
   else
     s.add_dependency(%q<do_oracle>, ["~> 0.10.2"])
     s.add_dependency(%q<dm-do-adapter>, ["~> 1.0.2"])
     s.add_dependency(%q<dm-migrations>, ["~> 1.0.2"])
+    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     s.add_dependency(%q<rake>, ["~> 0.8.7"])
     s.add_dependency(%q<rspec>, ["~> 1.3.1"])
-    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
   end
 end
 
