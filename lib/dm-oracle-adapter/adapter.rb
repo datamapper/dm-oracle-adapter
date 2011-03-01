@@ -193,7 +193,7 @@ module DataMapper
         def equality_operator(property, operand)
           if operand.nil?
             'IS'
-          elsif property.type == Types::Text
+          elsif property.kind_of?(Property::Text)
             'DBMS_LOB.SUBSTR(%s) = ?'
           else
             '='
@@ -206,7 +206,7 @@ module DataMapper
             when Array then 'IN'
             when Range then 'BETWEEN'
           end
-          if property.type == Types::Text
+          if property.kind_of?(Property::Text)
             "DBMS_LOB.SUBSTR(%s) #{operator} ?"
           else
             operator
