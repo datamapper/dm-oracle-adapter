@@ -1,6 +1,15 @@
 require 'do_oracle'
 require 'dm-do-adapter'
 
+class Object
+
+ def blank?
+   respond_to?(:empty?) ? empty? : !self
+ end
+end
+
+
+
 module DataMapper
 
   class Property
