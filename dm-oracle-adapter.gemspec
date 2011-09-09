@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "dm-oracle-adapter"
+  s.name = %q{dm-oracle-adapter}
   s.version = "1.2.0.rc1"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dan Kubb"]
-  s.date = "2011-09-05"
-  s.description = "Oracle Adapter for DataMapper"
-  s.email = "dan.kubb@gmail.com"
+  s.date = %q{2011-09-09}
+  s.description = %q{Oracle Adapter for DataMapper}
+  s.email = %q{dan.kubb@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE"
   ]
@@ -32,11 +32,11 @@ Gem::Specification.new do |s|
     "tasks/yard.rake",
     "tasks/yardstick.rake"
   ]
-  s.homepage = "http://github.com/datamapper/dm-oracle-adapter"
+  s.homepage = %q{http://github.com/datamapper/dm-oracle-adapter}
   s.require_paths = ["lib"]
-  s.rubyforge_project = "datamapper"
-  s.rubygems_version = "1.8.10"
-  s.summary = "Oracle Adapter for DataMapper"
+  s.rubyforge_project = %q{datamapper}
+  s.rubygems_version = %q{1.5.1}
+  s.summary = %q{Oracle Adapter for DataMapper}
   s.test_files = [
     "spec/adapter_spec.rb",
     "spec/spec_helper.rb"
