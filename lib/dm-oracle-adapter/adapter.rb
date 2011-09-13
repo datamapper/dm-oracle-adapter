@@ -145,7 +145,7 @@ module DataMapper
           if use_subquery
             statement << ")"
           end
-          if use_simple_rownum_limit
+          if use_simple_rownum_limit && limit
             statement << " AND rownum <= ?"
             bind_values << limit
           end
