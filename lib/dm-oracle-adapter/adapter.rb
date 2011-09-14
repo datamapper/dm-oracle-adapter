@@ -3,10 +3,7 @@ require 'dm-do-adapter'
 
 module DataMapper
 
-  class Property
-    # for custom sequence names
-    OPTIONS << :sequence
-  end
+  Property.accept_options(:sequence)
 
   module Adapters
     class OracleAdapter < DataObjectsAdapter
