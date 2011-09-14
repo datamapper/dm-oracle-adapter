@@ -23,9 +23,8 @@ group :development do
     SOURCE  => "#{DATAMAPPER}/dm-migrations#{REPO_POSTFIX}",
     :branch => CURRENT_BRANCH
 
-  gem 'jeweler',       '~> 1.5.2'
-  gem 'rake',          '~> 0.8.7'
-  gem 'rspec',         '~> 1.3.1'
+  gem 'jeweler',       '~> 1.6.4'
+  gem 'rspec',         '~> 1.3.2'
 
 end
 
