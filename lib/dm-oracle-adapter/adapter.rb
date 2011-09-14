@@ -99,8 +99,8 @@ module DataMapper
 
           # create subquery to find all valid keys and then use these keys to retrive all other columns
           use_subquery = qualify
-          no_group_by  = group_by.to_s.empty?
-          no_order     = order.to_s.empty?
+          no_group_by  = DataMapper::Ext.blank?(group_by)
+          no_order     = DataMapper::Ext.blank?(order)
 
           # when we can include ROWNUM condition in main WHERE clause
           use_simple_rownum_limit = limit && (offset||0 == 0) && no_group_by && no_order
@@ -138,7 +138,7 @@ module DataMapper
           end
           statement << from_statement
           statement << join_statement(query, bind_values, qualify)     if qualify
-          statement << " WHERE (#{conditions_statement})" unless conditions_statement.to_s.empty?
+          statement << " WHERE (#{conditions_statement})" unless DataMapper::Ext.blank?(conditions_statement)
           if use_subquery
             statement << ")"
           end
