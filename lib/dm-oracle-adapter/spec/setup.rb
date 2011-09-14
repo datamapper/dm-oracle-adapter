@@ -6,9 +6,13 @@ module DataMapper
     module Adapters
 
       class OracleAdapter < Adapter
-
+        
         def test_connection(adapter)
           adapter.select('SELECT 1 FROM dual')
+        end
+
+        def storage_name
+          ENV.fetch("#{name}_storage_name", super())
         end
 
       end
