@@ -6,9 +6,11 @@ module DataMapper
     module Adapters
 
       class OracleAdapter < Adapter
-        def test_connection
+
+        def test_connection(adapter)
           adapter.select('SELECT 1 FROM dual')
         end
+
       end
 
       use OracleAdapter
