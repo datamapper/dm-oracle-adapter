@@ -55,7 +55,7 @@ describe 'DataMapper::Adapters::OracleAdapter' do
     @repository = DataMapper.repository(@adapter.name)
 
     # speed up test execution
-    @adapter.class_eval do
+    @adapter.class.class_eval do
       auto_migrate_with :delete           # table data will be deleted instead of dropping and creating table
       auto_migrate_reset_sequences false  # primary key sequences will not be reset
     end

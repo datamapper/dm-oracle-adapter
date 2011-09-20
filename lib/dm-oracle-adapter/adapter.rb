@@ -3,10 +3,7 @@ require 'dm-do-adapter'
 
 module DataMapper
 
-  class Property
-    # for custom sequence names
-    OPTIONS << :sequence
-  end
+  Property.accept_options(:sequence)
 
   module Adapters
     class OracleAdapter < DataObjectsAdapter
@@ -145,7 +142,7 @@ module DataMapper
           if use_subquery
             statement << ")"
           end
-          if use_simple_rownum_limit
+          if use_simple_rownum_limit && limit
             statement << " AND rownum <= ?"
             bind_values << limit
           end
