@@ -29,6 +29,7 @@ group :development do
 end
 
 platforms :mri_18 do
+  gem 'ruby-oci8'
   group :quality do
 
     gem 'rcov',      '~> 0.9.9'
