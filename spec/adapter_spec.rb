@@ -50,12 +50,12 @@ end
 
 describe 'DataMapper::Adapters::OracleAdapter' do
 
-  before :all do
-    @adapter    = DataMapper::Spec.adapter
-    @repository = DataMapper.repository(@adapter.name)
+  let(:adapter)    { DataMapper::Spec.adapter }
+  let(:repository) { DataMapper.repository(adapter.name) }
 
+  before :all do
     # speed up test execution
-    @adapter.class.class_eval do
+    adapter.class.class_eval do
       auto_migrate_with :delete           # table data will be deleted instead of dropping and creating table
       auto_migrate_reset_sequences false  # primary key sequences will not be reset
     end
