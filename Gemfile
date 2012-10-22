@@ -1,8 +1,6 @@
 require 'pathname'
 
-source :rubygems
-
-gemspec
+source 'http://rubygems.org'
 
 SOURCE         = ENV.fetch('SOURCE', :git).to_sym
 REPO_POSTFIX   = SOURCE == :path ? ''                                : '.git'
@@ -14,17 +12,9 @@ CURRENT_BRANCH = ENV.fetch('GIT_BRANCH', 'master')
 do_options = {}
 do_options[:git] = "#{DATAMAPPER}/do#{REPO_POSTFIX}" if ENV['DO_GIT'] == 'true'
 
-gem 'dm-do-adapter', DM_VERSION,
-  SOURCE  => "#{DATAMAPPER}/dm-do-adapter#{REPO_POSTFIX}",
-  :branch => CURRENT_BRANCH
+gem 'do_oracle',     DO_VERSION, do_options.dup
+gem 'dm-do-adapter', DM_VERSION
 
-group :development do
-
-  gem 'dm-migrations', DM_VERSION,
-    SOURCE  => "#{DATAMAPPER}/dm-migrations#{REPO_POSTFIX}",
-    :branch => CURRENT_BRANCH
-
-end
 
 platforms :mri_18 do
   group :quality do
@@ -38,19 +28,8 @@ end
 
 group :datamapper do
 
-  gem 'dm-core', DM_VERSION,
-    SOURCE  => "#{DATAMAPPER}/dm-core#{REPO_POSTFIX}",
-    :branch => CURRENT_BRANCH
+  gem 'dm-core', DM_VERSION
 
   gem 'data_objects', DO_VERSION, do_options.dup
-
-  plugins = ENV['PLUGINS'] || ENV['PLUGIN']
-  plugins = plugins.to_s.tr(',', ' ').split.push('dm-migrations').uniq
-
-  plugins.each do |plugin|
-    gem plugin, DM_VERSION,
-      SOURCE  => "#{DATAMAPPER}/#{plugin}#{REPO_POSTFIX}",
-      :branch => CURRENT_BRANCH
-  end
 
 end
