@@ -142,7 +142,7 @@ module DataMapper
           if use_subquery
             statement << ")"
           end
-          if use_simple_rownum_limit && limit
+          if use_simple_rownum_limit && limit && statement.match(/\s+WHERE\s+/m)
             statement << " AND rownum <= ?"
             bind_values << limit
           end
