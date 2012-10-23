@@ -13,8 +13,6 @@ do_options = {}
 do_options[:git] = "#{DATAMAPPER}/do#{REPO_POSTFIX}" if ENV['DO_GIT'] == 'true'
 
 gem 'do_oracle',     DO_VERSION, do_options.dup
-gem 'dm-do-adapter', DM_VERSION
-
 
 platforms :mri_18 do
   group :quality do
